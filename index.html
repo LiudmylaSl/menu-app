@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu App</title>
+  <title>Menü Auswahl</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <div class="container">
-    <h1 class="text-center">Wochenmenü-Woche 2 6-10.01.2025</h1>
+    <h1 class="text-center">Menü Auswahl</h1>
     <form id="dishForm">
       <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="Введіть ім'я" required>
+        <input type="text" id="name" placeholder="Geben Sie Ihren Namen ein" required>
       </div>
       <div class="form-group">
         <label for="day">Wochentag:</label>
@@ -26,17 +26,21 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="dish">Menütyp:</label>
+        <label for="dish">Gerichtstyp:</label>
         <select id="dish">
-          <option value="regular">Normales Menü</option>
-          <option value="vegetarian">Vegetarisches Menü</option>
+          <option value="regular">Regulär</option>
+          <option value="vegetarian">Vegetarisch</option>
         </select>
       </div>
       <div class="form-group">
         <label for="dishName">Gerichtsname:</label>
-        <input type="text" id="dishName" placeholder="Введіть назву блюда" required>
+        <input type="text" id="dishName" placeholder="Geben Sie den Namen des Gerichts ein" required>
       </div>
-      <button type="submit">Wahlen</button>
+      <div class="form-group">
+        <label for="suggestedDishes">Vorgeschlagene Gerichte:</label>
+        <input type="text" id="suggestedDishes" placeholder="Geben Sie Vorschläge für Gerichte ein">
+      </div>
+      <button type="submit">Auswählen</button>
     </form>
 
     <h2>Ergebnisse</h2>
@@ -46,32 +50,35 @@
           <tr>
             <th>Name</th>
             <th>Wochentag</th>
-            <th>Menütyp</th>
+            <th>Gerichtstyp</th>
             <th>Gerichtsname</th>
+            <th>Vorgeschlagene Gerichte</th>
             <th>Aktionen</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
     </div>
-    
-    <h2>Auswahlzusammenfassung</h2>
+
+    <h2>Zusammenfassung der Auswahl</h2>
     <div class="table-wrapper">
       <table id="summaryTable">
         <thead>
           <tr>
             <th>Wochentag</th>
-            <th>Normales Menü</th>
-            <th>Vegetarisches Menü</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+            <th>Regulär</th>
+            <th>Vegetarisch</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h2>Liste der Angemeldeten</h2>
+    <div id="nameList">
+      <p>Niemand ist derzeit angemeldet.</p>
+    </div>
   </div>
-  <h2>Liste der Angemeldeten</h2>
-<div id="nameList">
-  <p>Niemand ist angemeldet.</p>
-</div>
   <script src="app.js"></script>
 </body>
 </html>

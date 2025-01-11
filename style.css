@@ -56,34 +56,6 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background-color: #007bff;
-  color: white;
-}
-
-button.edit-btn {
-  background-color: #ffc107;
-  color: black;
-}
-
-button.delete-btn {
-  background-color: #dc3545;
-  color: white;
-}
-
-/* Загальний стиль для таблиць */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
   background-color: #fff;
 }
 
@@ -103,23 +75,22 @@ td {
   color: #333;
 }
 
-/* Вирівнювання таблиць на мобільних */
 .table-wrapper {
-  overflow-x: auto; /* Горизонтальне прокручування */
-  margin-bottom: 20px; /* Відступ між таблицями */
+  overflow-x: auto;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
   table {
-    font-size: 14px; /* Зменшення тексту на малих екранах */
+    font-size: 14px;
   }
 
   th, td {
-    padding: 8px; /* Менші відступи */
+    padding: 8px;
   }
 
   .table-wrapper {
-    border: 1px solid #ddd; /* Додамо рамку навколо таблиці для краси */
-    border-radius: 5px; /* Закруглені кути */
+    border: 1px solid #ddd;
+    border-radius: 5px;
   }
 }
