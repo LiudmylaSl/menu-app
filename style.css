@@ -78,7 +78,8 @@ button.delete-btn {
   background-color: #dc3545;
   color: white;
 }
-/* Стиль для таблиць */
+
+/* Загальний стиль для таблиць */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -102,14 +103,23 @@ td {
   color: #333;
 }
 
-/* Адаптивність для мобільних пристроїв */
+/* Вирівнювання таблиць на мобільних */
 .table-wrapper {
-  overflow-x: auto; /* Дозволяє прокручування таблиці горизонтально */
+  overflow-x: auto; /* Горизонтальне прокручування */
+  margin-bottom: 20px; /* Відступ між таблицями */
 }
 
 @media (max-width: 768px) {
+  table {
+    font-size: 14px; /* Зменшення тексту на малих екранах */
+  }
+
   th, td {
-    font-size: 14px; /* Зменшуємо текст на менших екранах */
-    padding: 8px;
+    padding: 8px; /* Менші відступи */
+  }
+
+  .table-wrapper {
+    border: 1px solid #ddd; /* Додамо рамку навколо таблиці для краси */
+    border-radius: 5px; /* Закруглені кути */
   }
 }
