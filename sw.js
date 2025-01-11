@@ -104,3 +104,55 @@ function capitalizeFirstLetter(string) {
 
 // Завантаження даних при старті
 renderResults();
+// Функція для оновлення таблиці результатів
+function renderResults() {
+    const resultsTable = document.getElementById('resultsTable').querySelector('tbody');
+    resultsTable.innerHTML = ''; // Очищення таблиці
+    choices.forEach((choice, index) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${choice.name}</td>
+        <td>${choice.day}</td>
+        <td>${choice.dish}</td>
+        <td>${choice.dishName}</td>
+        <td>${choice.suggestedDishes || 'Keine Vorschläge'}</td>
+        <td>
+          <button class="edit-btn" data-index="${index}">Bearbeiten</button>
+          <button class="delete-btn" data-index="${index}">Löschen</button>
+        </td>
+      `;
+      resultsTable.appendChild(row);
+    });
+  
+    // Додавання функціоналу кнопок "Bearbeiten" і "Löschen"
+    document.querySelectorAll('.delete-btn').forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const index = event.target.getAttribute('data-index');
+        choices.splice(index, 1); // Видалення запису
+        localStorage.setItem('choices', JSON.stringify(choices));
+        renderResults();
+        renderSummary();
+        updateNameList();
+      });
+    });
+  
+    document.querySelectorAll('.edit-btn').forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const index = event.target.getAttribute('data-index');
+        const choice = choices[index];
+        document.getElementById('name').value = choice.name;
+        document.getElementById('day').value = choice.day;
+        document.getElementById('dish').value = choice.dish;
+        document.getElementById('dishName').value = choice.dishName;
+        document.getElementById('suggestedDishes').value = choice.suggestedDishes || '';
+        choices.splice(index, 1); // Видаляємо старий запис для редагування
+        localStorage.setItem('choices', JSON.stringify(choices));
+        renderResults();
+        renderSummary();
+        updateNameList();
+      });
+    });
+  
+    renderSummary(); // Оновлення підсумків
+    updateNameList(); // Оновлення списку імен
+  }
