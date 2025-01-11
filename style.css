@@ -78,3 +78,38 @@ button.delete-btn {
   background-color: #dc3545;
   color: white;
 }
+/* Стиль для таблиць */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+td {
+  color: #333;
+}
+
+/* Адаптивність для мобільних пристроїв */
+.table-wrapper {
+  overflow-x: auto; /* Дозволяє прокручування таблиці горизонтально */
+}
+
+@media (max-width: 768px) {
+  th, td {
+    font-size: 14px; /* Зменшуємо текст на менших екранах */
+    padding: 8px;
+  }
+}
