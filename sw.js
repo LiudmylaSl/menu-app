@@ -41,8 +41,8 @@ function renderResults() {
       <td>${choice.dish}</td>
       <td>${choice.dishName}</td>
       <td>
-        <button class="edit-btn" data-index="${index}">Редагувати</button>
-        <button class="delete-btn" data-index="${index}">Видалити</button>
+        <button class="edit-btn" data-index="${index}">Bearbeiten</button>
+        <button class="delete-btn" data-index="${index}">Löschen</button>
       </td>
     `;
     resultsTable.appendChild(row);
